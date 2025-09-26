@@ -1,11 +1,16 @@
-/* Configurações Globais e Variáveis de Cor */
+/* ======================= CONFIGURAÇÕES GLOBAIS E CORES ======================= */
 :root {
-    --primary-color: #333;      /* Cor principal para textos */
-    --secondary-color: #555;   /* Cor secundária para textos mais claros */
-    --background-color: #ffffff; /* Fundo principal */
-    --light-gray-bg: #f9f9f9;  /* Fundo para seções */
-    --button-color: #252525;   /* Cor do botão principal */
-    --whatsapp-green: #25D366; /* Cor do botão do WhatsApp */
+    --canorion-blue: #262a57;      /* SEU NOVO AZUL PRINCIPAL */
+    --canorion-blue-darker: #1c1f3e; /* Um tom mais escuro para efeitos hover */
+    --light-blue-bg: #f5f6fa;      /* Um azul quase branco para fundos de seção */
+    --secondary-color: #555;       /* Mantido para textos secundários com bom contraste */
+    --background-color: #ffffff;   /* Fundo principal branco */
+    --whatsapp-green: #25D366;     /* Cor do WhatsApp (não deve ser alterada) */
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
 }
 
 body {
@@ -13,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Cor de texto padrão agora é o cinza secundário */
 }
 
 .container {
@@ -22,21 +27,40 @@ body {
     padding: 0 20px;
 }
 
-/* Estilos do Cabeçalho */
+/* ======================= ESTILOS DO CABEÇALHO ======================= */
 header {
     background-color: var(--background-color);
-    padding: 10px 0;
+    padding: 15px 0;
     border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; 
 }
 
-header .logo img {
-    max-height: 90px;
+.logo-slogan {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.logo-slogan img {
+    max-height: 60px;
+    width: auto;
+}
+
+.logo-slogan span {
+    font-size: 0.9rem;
+    color: var(--canorion-blue);
+    max-width: 250px;
+    line-height: 1.3;
 }
 
 header nav ul {
@@ -50,18 +74,34 @@ header nav ul {
 
 header nav a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--canorion-blue-darker);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 header nav a:hover {
-    color: var(--primary-color);
+    color: var(--canorion-blue); /* Hover do link agora é azul */
 }
 
-/* Estilos da Seção Principal (Hero) */
+.nav-whatsapp {
+    background-color: var(--whatsapp-green);
+    color: #fff !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-whatsapp:hover {
+    background-color: #1DA851;
+    color: #fff !important;
+}
+
+/* ======================= ESTILOS DA SEÇÃO HERO ======================= */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(38, 42, 87, 0.6), rgba(38, 42, 87, 0.6)), url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -76,122 +116,44 @@ header nav a:hover {
 }
 
 .cta-button {
-    background-color: var(--button-color);
+    background-color: var(--canorion-blue); /* Botão principal agora é azul */
     color: #fff;
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 500;
     transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .cta-button:hover {
-    background-color: #000;
+    background-color: var(--canorion-blue-darker); /* Hover do botão é azul mais escuro */
 }
 
-/* Estilos do Conteúdo Principal */
-main {
+/* ======================= ESTILOS GERAIS DE SEÇÃO ======================= */
+section {
     padding: 60px 0;
-    background-color: var(--light-gray-bg);
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.info-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.info-card h2 {
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
     margin-top: 0;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    color: var(--canorion-blue); /* Títulos de seção agora são azuis */
 }
 
-.info-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+#sobre {
+    background-color: var(--background-color);
 }
 
-.info-card ul li {
-    display: flex;
+#sobre .page-content {
     align-items: center;
-    gap: 10px;
-    color: var(--secondary-color);
 }
 
-.info-card i {
-    font-size: 1.2rem;
-    width: 25px;
-    text-align: center;
-    color: var(--primary-color);
-}
-
-.contact-button {
-    display: inline-block;
-    margin-top: 15px;
-    background-color: #f1f1f1;
-    color: var(--primary-color);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: #e0e0e0;
-}
-
-
-/* Botão Fixo do WhatsApp */
-.whatsapp-button {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: var(--whatsapp-green);
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    text-decoration: none;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    transform: scale(1.1);
-}
-
-.hero-small {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-align: center;
-    padding: 60px 0;
-}
-
-.hero-small h1 {
-    font-size: 2.5rem;
-}
-
-/* Layout da página de conteúdo (Ex: Sobre Nós) */
 .page-content {
     padding: 40px 0;
     display: flex;
@@ -210,14 +172,18 @@ main {
 
 .text-content h2 {
     margin-top: 0;
+    color: var(--canorion-blue); /* Títulos de conteúdo agora são azuis */
 }
 
-/* Grid de serviços */
+/* ======================= ESTILOS DA SEÇÃO DE SERVIÇOS ======================= */
+#servicos {
+    background-color: var(--light-blue-bg); /* Fundo da seção agora é azul claro */
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    padding: 40px 0;
 }
 
 .service-card {
@@ -231,21 +197,162 @@ main {
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 15px rgba(38, 42, 87, 0.1);
 }
 
 .service-card i {
     font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
+    color: var(--canorion-blue); /* Ícones agora são azuis */
+    margin-bottom: 5px;
+    margin-top: 10px;
 }
 
 .service-card h3 {
     margin-bottom: 10px;
+    color: var(--canorion-blue); /* Títulos dos cards agora são azuis */
 }
 
-/* Ajuste para telas menores */
+/* ======================= ESTILOS DA SEÇÃO DE PARCEIROS ======================= */
+#parceiros {
+    background-color: var(--background-color);
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.partners-grid img {
+    max-height: 60px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.partners-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ======================= BOTÃO FLUTUANTE WHATSAPP ======================= */
+.whatsapp-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--whatsapp-green);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+    
+/* ======================= ESTILOS DO RODAPÉ (FOOTER) ======================= */
+footer {
+    background-color: var(--canorion-blue); /* Rodapé agora é azul */
+    color: #ccc;
+    padding-top: 50px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.footer-col p {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+}
+
+.footer-logo {
+    max-height: 60px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #ccc;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #3a5775;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ======================= AJUSTES PARA TELAS MENORES ======================= */
 @media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .logo-slogan {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    .logo-slogan span {
+        max-width: none;
+    }
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .page-content {
         flex-direction: column;
     }
