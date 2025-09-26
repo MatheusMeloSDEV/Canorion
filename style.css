@@ -1,6 +1,5 @@
-/* ======================= CONFIGURAÇÕES GLOBAIS E CORES ======================= */
 :root {
-    --canorion-blue: #262a57;      /* SEU NOVO AZUL PRINCIPAL */
+    --canorion-blue: #262a57;      /* Azul principal */
     --canorion-blue-darker: #1c1f3e; /* Um tom mais escuro para efeitos hover */
     --light-blue-bg: #f5f6fa;      /* Um azul quase branco para fundos de seção */
     --secondary-color: #555;       /* Mantido para textos secundários com bom contraste */
@@ -18,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
-    color: var(--secondary-color); /* Cor de texto padrão agora é o cinza secundário */
+    color: var(--secondary-color); 
 }
 
 .container {
@@ -27,7 +26,6 @@ body {
     padding: 0 20px;
 }
 
-/* ======================= ESTILOS DO CABEÇALHO ======================= */
 header {
     background-color: var(--background-color);
     padding: 15px 0;
@@ -80,7 +78,7 @@ header nav a {
 }
 
 header nav a:hover {
-    color: var(--canorion-blue); /* Hover do link agora é azul */
+    color: var(--canorion-blue);
 }
 
 .nav-whatsapp {
@@ -99,7 +97,6 @@ header nav a:hover {
     color: #fff !important;
 }
 
-/* ======================= ESTILOS DA SEÇÃO HERO ======================= */
 .hero {
     background-image: linear-gradient(rgba(38, 42, 87, 0.6), rgba(38, 42, 87, 0.6)), url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
@@ -116,7 +113,7 @@ header nav a:hover {
 }
 
 .cta-button {
-    background-color: var(--canorion-blue); /* Botão principal agora é azul */
+    background-color: var(--canorion-blue); 
     color: #fff;
     padding: 12px 25px;
     text-decoration: none;
@@ -129,10 +126,9 @@ header nav a:hover {
 }
 
 .cta-button:hover {
-    background-color: var(--canorion-blue-darker); /* Hover do botão é azul mais escuro */
+    background-color: var(--canorion-blue-darker); 
 }
 
-/* ======================= ESTILOS GERAIS DE SEÇÃO ======================= */
 section {
     padding: 60px 0;
     border-bottom: 1px solid #f0f0f0;
@@ -143,7 +139,7 @@ section {
     font-size: 2.2rem;
     margin-top: 0;
     margin-bottom: 40px;
-    color: var(--canorion-blue); /* Títulos de seção agora são azuis */
+    color: var(--canorion-blue); 
 }
 
 #sobre {
@@ -172,12 +168,11 @@ section {
 
 .text-content h2 {
     margin-top: 0;
-    color: var(--canorion-blue); /* Títulos de conteúdo agora são azuis */
+    color: var(--canorion-blue); 
 }
 
-/* ======================= ESTILOS DA SEÇÃO DE SERVIÇOS ======================= */
 #servicos {
-    background-color: var(--light-blue-bg); /* Fundo da seção agora é azul claro */
+    background-color: var(--light-blue-bg); 
 }
 
 .services-grid {
@@ -202,17 +197,16 @@ section {
 
 .service-card i {
     font-size: 2.5rem;
-    color: var(--canorion-blue); /* Ícones agora são azuis */
+    color: var(--canorion-blue);
     margin-bottom: 5px;
     margin-top: 10px;
 }
 
 .service-card h3 {
     margin-bottom: 10px;
-    color: var(--canorion-blue); /* Títulos dos cards agora são azuis */
+    color: var(--canorion-blue); 
 }
 
-/* ======================= ESTILOS DA SEÇÃO DE PARCEIROS ======================= */
 #parceiros {
     background-color: var(--background-color);
 }
@@ -238,7 +232,6 @@ section {
     transform: scale(1.1);
 }
 
-/* ======================= BOTÃO FLUTUANTE WHATSAPP ======================= */
 .whatsapp-button {
     position: fixed;
     bottom: 25px;
@@ -262,7 +255,6 @@ section {
     transform: scale(1.1);
 }
     
-/* ======================= ESTILOS DO RODAPÉ (FOOTER) ======================= */
 footer {
     background-color: var(--canorion-blue); /* Rodapé agora é azul */
     color: #ccc;
@@ -335,7 +327,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ======================= AJUSTES PARA TELAS MENORES ======================= */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
