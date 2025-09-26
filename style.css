@@ -1,0 +1,179 @@
+/* Configurações Globais e Variáveis de Cor */
+:root {
+    --primary-color: #333;      /* Cor principal para textos */
+    --secondary-color: #555;   /* Cor secundária para textos mais claros */
+    --background-color: #ffffff; /* Fundo principal */
+    --light-gray-bg: #f9f9f9;  /* Fundo para seções */
+    --button-color: #252525;   /* Cor do botão principal */
+    --whatsapp-green: #25D366; /* Cor do botão do WhatsApp */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos do Cabeçalho */
+header {
+    background-color: var(--background-color);
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 90px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Estilos da Seção Principal (Hero) */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: left;
+    padding: 120px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: var(--button-color);
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #000;
+}
+
+/* Estilos do Conteúdo Principal */
+main {
+    padding: 60px 0;
+    background-color: var(--light-gray-bg);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.info-card h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-card ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--secondary-color);
+}
+
+.info-card i {
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.contact-button {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #f1f1f1;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* Botão Fixo do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--whatsapp-green);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
